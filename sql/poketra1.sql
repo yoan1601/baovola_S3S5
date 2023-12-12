@@ -23,6 +23,7 @@ CREATE  TABLE lookmatiere (
  );
 
 
+
 insert into look (nomlook) VALUES ('luxe');
 insert into look (nomlook) VALUES ('normal');
 insert into look (nomlook) VALUES ('debraille');
@@ -30,6 +31,12 @@ insert into look (nomlook) VALUES ('debraille');
 insert into matiere (nommatiere) VALUES ('cuire');
 insert into matiere (nommatiere) VALUES ('soga');
 insert into matiere (nommatiere) VALUES ('raphia');
+
+insert into lookmatiere (idlook, idmatiere) VALUES (1, 1);
+insert into lookmatiere (idlook, idmatiere) VALUES (1, 3);
+insert into lookmatiere (idlook, idmatiere) VALUES (2, 1);
+insert into lookmatiere (idlook, idmatiere) VALUES (3, 1);
+insert into lookmatiere (idlook, idmatiere) VALUES (3, 2);
 
 create or replace view v_lookmatiere as(
 select look.idlook,look.nomlook,matiere.idmatiere,matiere.nommatiere from lookmatiere 
