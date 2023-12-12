@@ -1,3 +1,5 @@
+<%@ include file = "header.jsp" %>
+
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
