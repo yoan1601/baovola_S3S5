@@ -1,5 +1,4 @@
 <%@ include file = "header.jsp" %>
-
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
@@ -38,6 +37,8 @@
         </div>
     </section>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+<%@ include file = "footer.jsp" %>
 </body>
 
 </html>
