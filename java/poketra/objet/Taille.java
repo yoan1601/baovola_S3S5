@@ -37,13 +37,15 @@ public class Taille {
         }catch(SQLException e){e.printStackTrace();}
     }
 
-    public Vector[] get_all_taille(Connection connexion,String Table) throws Exception{
+    public Vector[] get_all_taille(String Table) throws Exception{
         int count = 0;
         int taille = 0;
         Vector[] ligne = new Vector[0];
         Vector desc = new Vector();
         String sql = "select * from taille";
+        Fonction func = new Fonction();
         try{
+            Connection connexion = func.getconnexion();
             Statement statement = connexion.createStatement();
             DatabaseMetaData metaData = connexion.getMetaData();
             ResultSet resultSet0;
