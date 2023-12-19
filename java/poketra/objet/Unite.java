@@ -1,10 +1,7 @@
 package objet;
 
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Vector;
+import java.sql.*;
+import java.util.*;
 
 import fonction.Fonction;
 
@@ -42,13 +39,15 @@ public class Unite {
         }catch(SQLException e){e.printStackTrace();}
     }
 
-    public Vector[] get_all_unite(Connection connexion,String Table) throws Exception{
+    public Vector[] get_all_unite(String Table) throws Exception{
         int count = 0;
         int taille = 0;
         Vector[] ligne = new Vector[0];
         Vector desc = new Vector();
         String sql = "select * from unite";
+        Fonction func = new Fonction();
         try{
+            Connection connexion = func.getconnexion();
             Statement statement = connexion.createStatement();
             DatabaseMetaData metaData = connexion.getMetaData();
             ResultSet resultSet0;
