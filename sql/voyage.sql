@@ -1,4 +1,6 @@
 CREATE SCHEMA IF NOT EXISTS "public";
+create database voyage;
+\c voyage 
 
 CREATE  TABLE activite ( 
 	id                   serial  NOT NULL  ,
@@ -39,3 +41,11 @@ left join activite on bouquet_activites.activite=activite.id ;
 );
 
 
+duree => chiffre
+cours /moyen  /long [intervalle]
+formule de composition de voyage 
+	premium local = picnic , visite musee , quad
+	court -- 2 picnic   2	1
+	moyen -- 4 picnic	3	2
+question???
+	misafidy activite=> liste ny voyage manana anio quand io + quantite 
