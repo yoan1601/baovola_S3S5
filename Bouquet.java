@@ -17,7 +17,7 @@ public class Bouquet {
     {this.designation = x;}
 
     public void insertbouquet(Connection con, String designation){
-        sql = "insert into bouquet (designation) values ('"+designation+"')";
+        String sql = "insert into bouquet (designation) values ('"+designation+"')";
         try{
             Statement statement = con.createStatement();
             statement.executeUpdate(sql);
