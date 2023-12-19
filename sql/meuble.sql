@@ -1,4 +1,6 @@
 CREATE SCHEMA IF NOT EXISTS "public";
+create database meuble;
+\c meuble 
 
 CREATE  TABLE matieres ( 
 	id_matieres          serial  NOT NULL  ,
@@ -40,3 +42,11 @@ from style as s
 join style_matiere as s_m
 on s.id_style=s_m.id_style
 join matieres as m on m.id_matieres=s_m.id_matieres);
+
+formule fabrication meuble 
+	canape b.= tissu,perle,chaine
+	petit 2 10 3
+	lehibe 	4 20 5
+question??
+	misafidy tissu(liste)==> canape b. 4
+

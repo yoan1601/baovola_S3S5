@@ -1,9 +1,10 @@
 CREATE SCHEMA IF NOT EXISTS "public";
 create database poketra;
+\c poketra 
 
 CREATE  TABLE look ( 
 	idlook               serial  NOT NULL  ,
-	nomlook              varchar(50)   NOT NULL ,
+	nomlook              varchar(50)  NOT NULL  ,
 	CONSTRAINT pk_look PRIMARY KEY ( idlook )
  );
 
@@ -42,6 +43,16 @@ create or replace view v_lookmatiere as(
 select look.idlook,look.nomlook,matiere.idmatiere,matiere.nommatiere from lookmatiere 
 join look on lookmatiere.idlook=look.idlook 
 join matiere on matiere.idmatiere=lookmatiere.idmatiere);
+
+
+
+save formule confection 
+sacados de luxe = cuirre , tissu broder ,accesiore de deco,
+	taille =  1  2	3	
+	medium =  2  3	4
+question ??
+	listeo sac rehefa misafidy matiere za 
+		sacados luxe (anakifiry) 3
 
 
 
