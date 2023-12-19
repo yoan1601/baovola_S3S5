@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.*;
 
 import fonction.Fonction;
+import objet.Look;
 
 public class Modele {
     int idmodele;
@@ -58,13 +59,15 @@ public class Modele {
             connexion.close();
         }catch(SQLException e){e.printStackTrace();}
     }
-    public Vector[] get_all_modele(Connection connexion,String Table) throws Exception{
+    public Vector[] get_all_modele(String Table) throws Exception{
         int count = 0;
         int taille = 0;
         Vector[] ligne = new Vector[0];
         Vector desc = new Vector();
         String sql = "select * from modele";
+        Fonction func = new Fonction();
         try{
+            Connection connexion = func.getconnexion();
             Statement statement = connexion.createStatement();
             DatabaseMetaData metaData = connexion.getMetaData();
             ResultSet resultSet0;
