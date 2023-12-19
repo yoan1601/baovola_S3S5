@@ -1,4 +1,5 @@
 package objet;
+import java.util.Vector;
 public class Look {
     int id_look;
     String nom_look;
