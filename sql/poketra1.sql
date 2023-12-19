@@ -3,13 +3,13 @@ create database poketra;
 
 CREATE  TABLE look ( 
 	idlook               serial  NOT NULL  ,
-	nomlook              varchar(50)    ,
+	nomlook              varchar(50)   NOT NULL ,
 	CONSTRAINT pk_look PRIMARY KEY ( idlook )
  );
 
 CREATE  TABLE matiere ( 
 	idmatiere            serial  NOT NULL  ,
-	nommatiere           varchar(50)    ,
+	nommatiere           varchar(50)  NOT NULL  ,
 	CONSTRAINT pk_matiere PRIMARY KEY ( idmatiere )
  );
 
