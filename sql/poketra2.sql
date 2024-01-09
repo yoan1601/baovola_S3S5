@@ -92,7 +92,7 @@ join type on type.idtype=modele.idtype);
 
 
 create or replace view v_formule as (
-select v_modele.idmodele, v_modele.idlook,v_modele.nomlook,v_modele.idtaille,v_modele.nomtaille,v_modele.idtype,v_modele.nomtype,formule.idmatiere as idmatiere,matiere.nommatiere as nommatiere from v_modele
+select v_modele.idmodele, v_modele.idlook,v_modele.nomlook,v_modele.idtaille,v_modele.nomtaille,v_modele.idtype,v_modele.nomtype,formule.idmatiere as idmatiere, formule.quantite,matiere.nommatiere as nommatiere from v_modele
 join formule on v_modele.idmodele=formule.idmodele
 join matiere on formule.idmatiere=matiere.idmatiere
 );
