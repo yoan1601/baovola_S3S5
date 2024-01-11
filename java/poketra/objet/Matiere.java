@@ -1,7 +1,9 @@
 package objet;
-
 import java.text.Normalizer.Form;
 import java.util.Vector;
+
+import fonction.Fonction;
+
 
 public class Matiere {
     int id_matiere;
@@ -35,4 +37,17 @@ public class Matiere {
         this.listeformule = listeformule;
     }
 
+    public Double getLastPrix(int idMatiere){
+        Fonction func = new Fonction();
+        Vector[] allprice = func.gettable("matiere_prix", "select * prix_actuelle from matiere_prix where idMatiere="+idMatiere+" and dateHeurePrix=(select * MAX(dateHeurePrix) from matiere_prix where idMatiere="+idMatiere+")");
+        Double valiny = Double.parseDouble((String)allprice[0].get(0));
+        return valiny;
+    }
+
+    public void acheter(int idMatiere,double quantite)throws Exception{
+        try{
+            Fonction Func = new Fonction();
+            Func.updatesql("insert into mouvement_stock values(DEFAULT,"+idMatiere+",'"+quantite+"',0,DEFAULT,'"+this.getLastPrix(idMatiere)+"')");
+        }catch(Exception e){e.printStackTrace();}
+    }
 }
