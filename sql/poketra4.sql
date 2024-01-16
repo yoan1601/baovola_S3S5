@@ -164,8 +164,7 @@ CREATE OR REPLACE VIEW v_listeproduit AS SELECT v_formule.idmodele,
     (m.prix * (v_formule.quantite)::numeric) AS prixtotal
    FROM (v_formule
      JOIN matiere m ON ((m.idmatiere = v_formule.idmatiere)));
-     
-drop view v_prix; 
+
 
 CREATE OR REPLACE VIEW v_prix AS
 SELECT
@@ -180,6 +179,20 @@ GROUP BY
     v_listeproduit.nomtaille,
     v_listeproduit.nomtype,
     v_listeproduit.idmodele;
+
+CREATE OR REPLACE VIEW v_prix AS (
+SELECT
+    v_listeproduit.nomlook,
+    v_listeproduit.nomtaille,
+    v_listeproduit.nomtype,
+    v_listeproduit.idmodele,
+    sum(v_listeproduit.prixtotal) AS prixtotal
+FROM v_listeproduit
+GROUP BY 
+    v_listeproduit.nomlook,
+    v_listeproduit.nomtaille,
+    v_listeproduit.nomtype,
+    v_listeproduit.idmodele);
 
 
 INSERT INTO look( idlook, nomlook ) VALUES ( DEFAULT, 'luxe');

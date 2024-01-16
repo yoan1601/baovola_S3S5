@@ -126,7 +126,7 @@ CREATE OR REPLACE VIEW v_style_matiere AS SELECT s_m.id_style, m.id_matieres, s.
  SELECT s_m.id_style,
     m.id_matieres,
     s.nom_style,
-    s.description,
+    s.description,z
     m.nom_matiere
    FROM ((style s
      JOIN style_matiere s_m ON ((s.id_style = s_m.id_style)))
@@ -161,4 +161,20 @@ join v_matieres_meuble as v_mm on meu.id_meuble=v_mm.id_meuble
 join v_style_matiere as v_sm on v_mm.id_matieres=v_sm.id_matieres
 join v_taille_meuble as v_tm on meu.id_meuble=v_tm.id_meuble
 );
+
+create or replace view v_meuble_prix as(
+select id_meuble,nom_meuble,id_categorie,id_style,date_creation,vmm.id_matieres,vmm.nom_matiere,vmm.unite,id_matieres_meuble
+from v_matieres_meuble as vmm 
+join histo_matiere as hm on vmm.id_matieres=hm.id_matieres
+);
+
+
+CREATE OR REPLACE VIEW v_meuble_entre_prix AS(
+SELECT v_mp.id_meuble, v_mp.nom_meuble, SUM(hm.prix_unitaire) AS montant
+FROM v_meuble_prix AS v_mp
+JOIN histo_matiere AS hm ON v_mp.id_matieres = hm.id_matieres
+GROUP BY v_mp.id_meuble, v_mp.nom_meuble
+);
+
+
 
