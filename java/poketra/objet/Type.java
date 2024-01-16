@@ -22,7 +22,7 @@ public class Type {
         this.nom_type = x;
     }
 
-    public void insert_type(String nom_type2){
+    public void insert_type(String nom_type2)throws Exception{
         this.setnom_type(nom_type2);
         String sql = "";
         sql = "insert into type (nom_type) values ('"+this.getnom_type()+"')";
