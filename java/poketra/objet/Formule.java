@@ -44,7 +44,7 @@ public class Formule {
         this.quantite = quantite;
     }
 
-    public void insert_formule(Modele modele1, Matiere matiere1, Double quantite1){
+    public void insert_formule(Modele modele1, Matiere matiere1, Double quantite1)throws Exception{
         this.setmodele(modele1);
         this.setmatiere(matiere1);
         this.setquantite(quantite1);
@@ -100,6 +100,4 @@ public class Formule {
         }
         return ligne;
     }
-
-
 }

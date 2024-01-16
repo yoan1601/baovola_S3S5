@@ -50,8 +50,10 @@ public class Fonction {
         Vector desc = this.desc(Table);
         Vector[] ligne = new Vector[taille];
         String[] nom = new String[desc.size()];
-        for(int i=0; i<desc.size(); i++)
-        {nom[i] = (String)desc.get(i);} 
+        for(int i=0; i<desc.size(); i++){
+            nom[i] = (String)desc.get(i);
+            System.out.println("nom["+i+"] = "+nom[i]);
+        }
         
         try{
         Connection connexion = this.getconnexion();
@@ -59,8 +61,9 @@ public class Fonction {
         ResultSet resultSet = statement.executeQuery(sql);
         while(resultSet.next()){
             ligne[count] = new Vector();
-            for(int u=0; u<desc.size(); u++)
-            {ligne[count].add(resultSet.getString(nom[u]));}
+            for(int u=0; u<desc.size(); u++){
+                ligne[count].add(resultSet.getString(nom[u]));
+            }
             count++;
         }
         resultSet.close();
@@ -107,7 +110,7 @@ public class Fonction {
         }catch(SQLException e){e.printStackTrace();}
     }
 
-    public void updatesql(String sql){
+    public void updatesql(String sql)throws Exception{
         try{
             Connection connexion = this.getconnexion();
             Statement statement = connexion.createStatement();
@@ -115,5 +118,9 @@ public class Fonction {
             statement.close();
             connexion.close();
         }catch(SQLException e){e.printStackTrace();}
+    }
+
+    public Object table_to_class(String sql){
+        Object valiny = new Object();
     }
 }
