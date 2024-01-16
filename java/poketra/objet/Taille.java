@@ -23,7 +23,7 @@ public class Taille {
         this.nom_taille = x;
     }
 
-    public void insert_type(String nom_taille2){
+    public void insert_type(String nom_taille2)throws Exception{
         this.setnom_taille(nom_taille2);
         String sql = "";
         sql = "insert into taille (nom_taille) values ('"+this.getnom_taille()+"')";

@@ -37,10 +37,10 @@ public class Matiere {
         this.listeformule = listeformule;
     }
 
-    public Double getLastPrix(int idMatiere){
+    public Double getLastPrix(int idMatiere)throws Exception{
         Fonction func = new Fonction();
-        Vector[] allprice = func.gettable("matiere_prix", "select * prix_actuelle from matiere_prix where idMatiere="+idMatiere+" and dateHeurePrix=(select * MAX(dateHeurePrix) from matiere_prix where idMatiere="+idMatiere+")");
-        Double valiny = Double.parseDouble((String)allprice[0].get(0));
+        Vector[] allprice = func.gettable("matiere_prix", "select * from matiere_prix where idMatiere="+idMatiere+" and dateHeurePrix=(select MAX(dateHeurePrix) from matiere_prix where idMatiere="+idMatiere+")");
+        Double valiny = Double.parseDouble((String)allprice[0].get(2));
         return valiny;
     }
 

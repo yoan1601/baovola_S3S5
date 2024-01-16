@@ -25,7 +25,7 @@ public class Unite {
         this.nom_unite = nom_unite;
     }
 
-    public void insert_unite(String x){
+    public void insert_unite(String x)throws Exception{
         this.setnom_unite(x);
         String sql = "";
         sql = "insert into unite (nom_unite) values ('"+this.getnom_unite()+"')";

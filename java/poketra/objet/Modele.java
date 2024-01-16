@@ -44,7 +44,7 @@ public class Modele {
         this.type = type;
     }
 
-    public void insert_modele(Look look1, Taille taille1, Type type1){
+    public void insert_modele(Look look1, Taille taille1, Type type1)throws Exception{
         this.setlook(look1);
         this.settaille(taille1);
         this.settype(type1);
@@ -98,5 +98,12 @@ public class Modele {
             throw e;
         }
         return ligne;
+    }
+    public void majPrixVente(int idModele,double prixVente)throws Exception{
+        Fonction fonction = new Fonction();
+        try{
+            fonction.updatesql("update modele set prixVente="+prixVente+" where idModele="+idModele);
+            fonction.updatesql("insert into prixVenteModele values (Default,"+idModele+",'"+prixVente+"',Default)");
+        }catch(SQLException e){e.printStackTrace();}
     }
 }

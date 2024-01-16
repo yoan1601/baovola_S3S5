@@ -117,4 +117,31 @@ public class Fonction {
         }catch(SQLException e){e.printStackTrace();}
     }
 
+    public Vector[] getv_benefice()throws Exception{
+        Vector[] vbenefice = new Vector[0];
+        try{
+            vbenefice = this.gettable("v_benefice","select * from v_benefice");
+        }catch(Exception e){e.printStackTrace();}
+        return vbenefice;
+    }
+
+    public void insertTypeEmplore(String nom,double tauxHoraire)throws Exception{
+        try{
+            this.updatesql("insert into typeEmploye values (Default,'"+nom+"','"+tauxHoraire+"')");
+        }catch(Exception e){e.printStackTrace();}
+    }
+
+    public void newRAModele (int idModele, int idTypeEmp, double nombre)throws Exception{
+        try{
+            this.updatesql("insert into ressource_humaine values (Default,"+idModele+","+idTypeEmp+",'"+nombre+"')");
+        }catch(Exception e){e.printStackTrace();}
+    }
+
+    public Vector[] getListeProduitBenefice(double prixMin, double prixMax)throws Exception{
+        Vector[] vbenefice = new Vector[0];
+        try{
+            vbenefice = this.gettable("v_benefice","select * from v_benefice where benefice >= "+prixMin+" and benefice <="+prixMax);
+        }catch(Exception e){e.printStackTrace();}
+        return vbenefice;
+    }
 }
