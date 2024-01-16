@@ -23,6 +23,9 @@
                             <li class="nav-item"><a class="nav-link" href="ToAffectationUniteMatiere">Unite pour matiere</a></li>
                             <li class="nav-item"><a class="nav-link" href="FormChoixLook">Liste formules</a></li>
                             <li class="nav-item"><a class="nav-link" href="ToStock?idMatiere=0">Stock</a></li>
+                            <li class="nav-item"><a class="nav-link" href="ToBenefice.jsp">Benefice</a></li>
+                            <li class="nav-item"><a class="nav-link" href="ToRH">RH</a></li>
+                            
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Creation
@@ -35,6 +38,7 @@
                                     <li><a class="dropdown-item" href="formTaille.jsp">taille</a></li>
                                     <li><a class="dropdown-item" href="formType.jsp">type</a></li>
                                     <li><a class="dropdown-item" href="formUnite.jsp">unite</a></li>
+                                    <li><a class="dropdown-item" href="ToTypeEmploye">type Employe</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -44,6 +48,16 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="ToAchat">Achat</a></li>
                                     <li><a class="dropdown-item" href="ToFabrication">Fabrication</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Maj
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="ToPrixVente">Prix de vente</a></li>
+                                    <li><a class="dropdown-item" href="ToMajDuree">Duree</a></li>
+                                    <li><a class="dropdown-item" href="ToMajNbEmp">Nombre Employe</a></li>
                                 </ul>
                             </li>
                         </ul>

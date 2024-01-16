@@ -22,19 +22,13 @@
 </head>
 
 <body>
-    <form style="max-width: 700px;margin: 70px;margin-left: 112px;" role="form" action="achat" method="post">
-        <div class="form-group mb-3" style="font-size: 36px;text-align: center;color: rgb(177,28,19);"><label class="form-label" style="font-family: 'Abril Fatface', serif;font-weight: bold;text-decoration:  underline;"><span style="color: rgb(48, 47, 47);">Acheter votre sac :</span></label></div>
-        
-        <div class="form-group mb-3"><label class="form-label">Matiere:&nbsp;</label>
-            <select class="form-select" id="tomSelect-1" required="" name="idMatiere" style="background: rgb(116,116,116);">
-                <% for(int i = 0; i < listeMatieres.length; i++) { %>
-                <option value="<%= listeMatieres[i].get(0) %>"><%= listeMatieres[i].get(1) %></option>
-                <% } %>
-            </select></div>
-
-        <div class="form-group mb-3"><label class="form-label">Quantite:</label><input class="form-control" type="number" id="tomSelect3" required="" name="qte" style="background: rgb(106,103,103);" placeholder="Veuiller inserer un nombre"></div>
+    <form style="max-width: 700px;margin: 70px;margin-left: 112px;" role="form" action="Benefice" method="post">
+        <div class="form-group mb-3" style="font-size: 36px;text-align: center;color: rgb(177,28,19);"><label class="form-label" style="font-family: 'Abril Fatface', serif;font-weight: bold;text-decoration:  underline;"><span style="color: rgb(48, 47, 47);">Choisissez l'intervalle de benefice</span></label></div>
+        <div class="form-group mb-3"><label class="form-label">Min:</label><input class="form-control" type="number" id="tomSelect3" required="" name="valMin" style="background: rgb(106,103,103);" placeholder="Veuiller inserer un nombre"></div>
         <hr style="margin-top: 30px;margin-bottom: 10px;">
-        <div class="form-group mb-3"><button class="btn btn-primary d-block w-100" id="submitButton" type="submit"><i class="fas fa-save"></i>&nbsp;Acheter</button></div>
+        <div class="form-group mb-3"><label class="form-label">Max:</label><input class="form-control" type="number" id="tomSelect3" required="" name="valMax" style="background: rgb(106,103,103);" placeholder="Veuiller inserer un nombre"></div>
+        <hr style="margin-top: 30px;margin-bottom: 10px;">
+        <div class="form-group mb-3"><button class="btn btn-primary d-block w-100" id="submitButton" type="submit"><i class="fas fa-save"></i>&nbsp;OK</button></div>
     </form>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Fixed-navbar-starting-with-transparency-script.js"></script>
