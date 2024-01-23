@@ -30,28 +30,48 @@
             <div class="card-header py-3">
                 <div class="row table-topper align-items-center">
                     <div class="col-12 col-sm-5 col-md-6 text-start" style="margin: 0px;padding: 5px 15px;">
-                        <p class="text-primary m-0 fw-bold"><span style="color: rgb(253, 27, 13);">Benefice entre 1000Ar et 30000Ar</span>&nbsp;</p>
+                        <p class="text-primary m-0 fw-bold"><span style="color: rgb(253, 27, 13);">Liste employe</span>&nbsp;</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
                     <div class="table-responsive">
+                        <form action="ToEtat">
+                            <select name="idTypeEmploye">
+                                <option value="ouvrier">ouvrier</option>
+                                <option value="ouvrier">senior</option>
+                                <option value="ouvrier">expert</option>
+                            </select>
+                            <input type="submit" value="Filtrer">
+                        </form>
                         <table class="table table-striped table tablesorter" id="ipi-table">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th class="text-center">Modele</th>
-                                    <th class="text-center">Benefice</th>
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">Nom</th>
+                                    <th class="text-center">Date embauche</th>
+                                    <th class="text-center">Profil</th>
+                                    <th class="text-center">Duree</th>
+                                    <th class="text-center">Taux horaire en Ariary</th>
                                 </tr>
                             </thead>
                             <tbody class="text-center">
                                 <tr>
                                     <td>M1</td>
                                     <td>B1</td>
+                                    <td>B1</td>
+                                    <td>M1</td>
+                                    <td>B1</td>
+                                    <td>B1</td>
                                 </tr>
                                 <tr>
                                     <td>M2</td>
                                     <td>B2</td>
+                                    <td>B1</td>
+                                    <td>M2</td>
+                                    <td>B2</td>
+                                    <td>B1</td>
                                 </tr>
                             </tbody>
                         </table>

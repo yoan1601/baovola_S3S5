@@ -24,8 +24,16 @@
                             <li class="nav-item"><a class="nav-link" href="FormChoixLook">Liste formules</a></li>
                             <li class="nav-item"><a class="nav-link" href="ToStock?idMatiere=0">Stock</a></li>
                             <li class="nav-item"><a class="nav-link" href="ToBenefice.jsp">Benefice</a></li>
-                            <li class="nav-item"><a class="nav-link" href="ToRH">RH</a></li>
-                            
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    RH
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="ToRH">Main d'oeuvre</a></li>
+                                    <li><a class="dropdown-item" href="ToEtatEmploye">Etat employe</a></li>
+                                    <li><a class="dropdown-item" href="ToEmbauche">Embauche</a></li>
+                                </ul>
+                            </li>                            
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Creation
