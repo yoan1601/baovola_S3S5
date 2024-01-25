@@ -1,5 +1,3 @@
-<%@ include file = "header.jsp" %>
-
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
@@ -22,63 +20,84 @@
     <link rel="stylesheet" href="assets/css/Ludens---1-Index-Table-with-Search--Sort-Filters-v20.css">
     <link rel="stylesheet" href="assets/css/Ludens---TomSelect-Form.css">
     <link rel="stylesheet" href="assets/css/Pretty-Footer-.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="card" id="TableSorterCard">
+            <form action="ToStatVente">
+                <div class="form-group mb-3"><label class="form-label" style="border-color: rgb(242,7,7);">Modele:&nbsp;</label>
+                    <select class="form-select" id="tomSelect2" required="" name="idModele" style="background: rgb(108,108,108);">
+                        <option value="tous">Tous</option>
+                        <% for(int i = 0; i < listeModeles.length; i++) { %>
+                        <option value="<%= listeModeles[i].get(0) %>"><%= listeModeles[i].get(6) %> <%= listeModeles[i].get(2) %> <%= listeModeles[i].get(4) %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="form-group mb-3"><button class="btn btn-primary d-block w-100" id="submitButton" type="submit"><i class="fas fa-save"></i>&nbsp;Filtrer</button></div>
+            </form>
             <div class="card-header py-3">
                 <div class="row table-topper align-items-center">
                     <div class="col-12 col-sm-5 col-md-6 text-start" style="margin: 0px;padding: 5px 15px;">
-                        <p class="text-primary m-0 fw-bold"><span style="color: rgb(253, 27, 13);">Liste employe</span>&nbsp;</p>
+                        <p class="text-primary m-0 fw-bold"><span style="color: rgb(253, 27, 13);">Nombres de vente</span>&nbsp;</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
                     <div class="table-responsive">
-                        <form action="ToEtat">
-                            <select name="idTypeEmploye">
-                                <option value="ouvrier">ouvrier</option>
-                                <option value="ouvrier">senior</option>
-                                <option value="ouvrier">expert</option>
-                            </select>
-                            <input type="submit" value="Filtrer">
-                        </form>
                         <table class="table table-striped table tablesorter" id="ipi-table">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th class="text-center">ID</th>
-                                    <th class="text-center">Nom</th>
-                                    <th class="text-center">Date embauche</th>
-                                    <th class="text-center">Profil</th>
-                                    <th class="text-center">Duree</th>
-                                    <th class="text-center">Taux horaire en Ariary</th>
+                                    <th class="text-center">Femme</th>
+                                    <th class="text-center">Homme</th>
                                 </tr>
                             </thead>
                             <tbody class="text-center">
                                 <tr>
-                                    <td>M1</td>
-                                    <td>B1</td>
-                                    <td>B1</td>
-                                    <td>M1</td>
-                                    <td>B1</td>
-                                    <td>B1</td>
-                                </tr>
-                                <tr>
-                                    <td>M2</td>
-                                    <td>B2</td>
-                                    <td>B1</td>
-                                    <td>M2</td>
-                                    <td>B2</td>
-                                    <td>B1</td>
+                                    <td>148</td>
+                                    <td>205</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <canvas id="myPieChart" width="400" height="400"></canvas>
+
+                <script>
+                    // Données du graphique
+                    var data = {
+                        labels: ["Homme", "Femme"],
+                        datasets: [{
+                            data: [205, 148],
+                            backgroundColor: ["#36A2EB", "#FF99FF"]
+                        }]
+                    };
+
+                    // Options du graphique
+                    var options = {
+                        responsive: true,
+                        maintainAspectRatio: false
+                    };
+
+                    // Création du graphique en camembert
+                    var ctx = document.getElementById('myPieChart').getContext('2d');
+                    var myPieChart = new Chart(ctx, {
+                        type: 'pie', // Type de graphique (pie pour un camembert)
+                        data: data,
+                        options: options
+                    });
+                </script>
+                </div>
+            </div>
         </div>
+        
+
+
     </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Fixed-navbar-starting-with-transparency-script.js"></script>

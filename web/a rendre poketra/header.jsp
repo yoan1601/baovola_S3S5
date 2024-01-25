@@ -47,6 +47,7 @@
                                     <li><a class="dropdown-item" href="formType.jsp">type</a></li>
                                     <li><a class="dropdown-item" href="formUnite.jsp">unite</a></li>
                                     <li><a class="dropdown-item" href="ToTypeEmploye">type Employe</a></li>
+                                    <li><a class="dropdown-item" href="ToCreationClient">client</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -56,8 +57,17 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="ToAchat">Achat</a></li>
                                     <li><a class="dropdown-item" href="ToFabrication">Fabrication</a></li>
+                                    <li><a class="dropdown-item" href="ToVente">Vente</a></li>
                                 </ul>
                             </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Stat
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="ToStatVente">Vente</a></li>
+                                </ul>
+                            </li>                            
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Maj
