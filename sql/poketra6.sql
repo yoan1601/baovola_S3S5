@@ -172,7 +172,7 @@ CREATE  TABLE ressource_humaine (
 	CONSTRAINT fk_ressource_humaine_typeemploye FOREIGN KEY ( idtypeemploye ) REFERENCES typeemploye( idtypeemploye )   
  );
 
-CREATE  TABLE vente_meuble ( 
+CREATE  TABLE vente_meuble ( --ovaina
 	idvente              serial  NOT NULL  ,
 	idmodele             integer  NOT NULL  ,
 	datevente            timestamp  NOT NULL  ,
